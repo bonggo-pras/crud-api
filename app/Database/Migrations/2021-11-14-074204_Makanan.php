@@ -39,6 +39,6 @@ class Makanan extends Migration
 
     public function down()
     {
-        $this->forge->dropTable('makanan');
+        $this->forge->dropTable('tbl_makanan');
     }
 }

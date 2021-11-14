@@ -13,13 +13,13 @@ Php spark migrate
 ## Route list
 
 Show <br />
-[GET] {domain}crud-api.dev/makanan
+[GET] {domain}/makanan
 
 Create <br />
-[POST] {domain}crud-api.dev/makanan/create
+[POST] {domain}/makanan/create
 
 update <br />
-[PUT] {domain}rud-api.dev/makanan/update{id}
+[PUT] {domain}/makanan/update/{id}
 
 delete <br />
-[DELETE] {domain}rud-api.dev/makanan/delete{id}
+[DELETE] {domain}/makanan/delete/{id}
