@@ -42,6 +42,9 @@ class Makanan extends ResourceController
     // single user
     public function show($id = null)
     {
+        $header = $this->request->getServer('HTTP_AUTHORIZATION');
+        if (!$header) return $this->failUnauthorized('TokenRequired');
+        
         $model = new MakananModel();
         $data = $model->where('id', $id)->first();
         if ($data) {
@@ -54,6 +57,9 @@ class Makanan extends ResourceController
     // update
     public function update($id = null)
     {
+        $header = $this->request->getServer('HTTP_AUTHORIZATION');
+        if (!$header) return $this->failUnauthorized('TokenRequired');
+
         $model = new MakananModel();
 
         $data = [
@@ -76,6 +82,9 @@ class Makanan extends ResourceController
     // delete
     public function delete($id = null)
     {
+        $header = $this->request->getServer('HTTP_AUTHORIZATION');
+        if (!$header) return $this->failUnauthorized('TokenRequired');
+
         $model = new MakananModel();
         $data = $model->where('id', $id)->delete($id);
 

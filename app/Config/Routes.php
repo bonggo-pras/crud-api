@@ -31,7 +31,17 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index', ['filter' => 'auth']);
+
+$routes->group('makanan', ['filter' => 'auth'], function ($routes) {
+    $routes->get('/', 'Makanan::index');
+    $routes->add('create', 'Makanan::create');
+    $routes->put('update/{:id}', 'Makanan::update');
+    $routes->delete('delete/{:id}', 'Makanan::delete');
+});
+
+$routes->post('register', 'Register::index');
+$routes->post('login', 'Login::index');
 
 /*
  * --------------------------------------------------------------------
