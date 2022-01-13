@@ -11,6 +11,13 @@ Migrasi database dulu  <br />
 Php spark migrate
 
 ## Route list
+Penambahan User login <br />
+
+User Login
+[POST]  {domain}/login
+
+User Register
+[POST]  {domain}/register
 
 Show <br />
 [GET] {domain}/makanan
